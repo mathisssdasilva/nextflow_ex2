@@ -32,4 +32,9 @@ workflow {
     tree = downloadTree()
 
     tips = listTips(tree)
+
+    tips
+        .splitCsv(header: true, sep: '\t')
+        .count()
+        .view()
 }
